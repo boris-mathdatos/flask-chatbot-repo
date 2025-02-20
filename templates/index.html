@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        .chat-box { border: 1px solid #ccc; padding: 10px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class = "container">
+        <h1>Chatbot</h1>
+        <div class = "chat-box">
+            {% if user_message %}
+                <p><strong>You:</strong> {{ user_message }}</p>
+                <p><strong>Bot:</strong> {{ bot_response }}</p>
+            {% endif %}
+        </div>
+        <form method = "POST" action = "/">
+            {{ form.hidden_tag() }}
+            {{ form.message.label }}<br>
+            {{ form.message(size=50) }}<br><br>
+            {{ form.submit() }}
+        </form>
+    </div>
+</body>
+</html>
