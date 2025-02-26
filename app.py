@@ -7,6 +7,7 @@ from flask import (Flask,
 
 from forms import ChatForm
 from config import Config
+
 from graphs.rag1.workflow import get_compiled_graph
 from database.initialize_db import get_db
 from langchain_chroma import Chroma

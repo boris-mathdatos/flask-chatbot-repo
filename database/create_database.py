@@ -35,6 +35,7 @@ def main():
     parser.add_argument("--delete", nargs = "?", const = "both", choices = ["ollama", "both"], help = "Reset the database")
     parser.add_argument("--embedding-model", type = str, default = "ollama", help = "The embedding model to use (ollama embbeddings for now)")
     args = parser.parse_args()
+    print(args.embedding_model)
 
     if args.delete:
         delete_database(args.delete)
